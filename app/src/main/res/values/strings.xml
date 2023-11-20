@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">OpenAI Dall•E</string>
+    <string name="app_name">Clear Sky</string>
     <string name="generate">Generate</string>
-    <string name="prompt_hint">Prompt</string>
+    <string name="prompt_hint">City</string>
     <string name="error">Error!</string>
     <string name="enter_description">Edit the detailed description</string>
     <string name="size_256">256 x 256</string>

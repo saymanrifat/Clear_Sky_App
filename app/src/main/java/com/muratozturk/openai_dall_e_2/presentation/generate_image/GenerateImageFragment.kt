@@ -36,9 +36,9 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
                         val imageSize = if (size256.isChecked) {
                             Sizes.SIZE_256
                         } else if (size512.isChecked) {
-                            Sizes.SIZE_512
+                            Sizes.SIZE_256
                         } else {
-                            Sizes.SIZE_1024
+                            Sizes.SIZE_256
                         }
                         generateImage(promptEditText.text.toString(), 4, imageSize)
                     } else {
@@ -48,9 +48,6 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
 
                 }
                 generatedImageCard.applyClickShrink()
-                generatedImageCard2.applyClickShrink()
-                generatedImageCard3.applyClickShrink()
-                generatedImageCard4.applyClickShrink()
 
                 viewLifecycleOwner.lifecycleScope.launchWhenStarted {
                     state.collect { response ->
@@ -75,22 +72,10 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
                                 }
 
                                 generatedImageView.glideImage(response.data.data[0].url)
-                                generatedImageView2.glideImage(response.data.data[1].url)
-                                generatedImageView3.glideImage(response.data.data[2].url)
-                                generatedImageView4.glideImage(response.data.data[3].url)
 
 
                                 generatedImageCard.setOnClickListener {
                                     showImageFullPage(response.data.data[0].url)
-                                }
-                                generatedImageCard2.setOnClickListener {
-                                    showImageFullPage(response.data.data[1].url)
-                                }
-                                generatedImageCard3.setOnClickListener {
-                                    showImageFullPage(response.data.data[2].url)
-                                }
-                                generatedImageCard4.setOnClickListener {
-                                    showImageFullPage(response.data.data[3].url)
                                 }
 
                             }

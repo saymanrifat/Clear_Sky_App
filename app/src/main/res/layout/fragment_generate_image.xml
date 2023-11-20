@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/enter_description"
+        android:text="Enter you City Name"
         android:textColor="@color/primary"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,6 +61,7 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:weightSum="3"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/promptInputLayout">
@@ -111,7 +112,7 @@
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:background="@drawable/rounded_bg3"
-        android:text="@string/generate"
+        android:text="Send To Ai"
         android:textAllCaps="false"
         android:textColor="@color/primary"
         android:textSize="15sp"
@@ -144,35 +145,10 @@
 
                 <GridLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:columnCount="2">
-
-
+                    android:layout_height="wrap_content">
                     <View
-                        android:layout_width="0dp"
+                        android:layout_width="200dp"
                         android:layout_height="200dp"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="@dimen/margin_small"
-                        android:background="@drawable/radius_corner" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="200dp"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="@dimen/margin_small"
-                        android:background="@drawable/radius_corner" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="200dp"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="@dimen/margin_small"
-                        android:background="@drawable/radius_corner" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="200dp"
-                        android:layout_columnWeight="1"
                         android:layout_margin="@dimen/margin_small"
                         android:background="@drawable/radius_corner" />
 
@@ -204,70 +180,6 @@
 
                     <ImageView
                         android:id="@+id/generatedImageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/generatedImageCard2"
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="@dimen/margin_small"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="@dimen/card_elevation_small"
-                    app:strokeColor="@color/primary"
-                    app:strokeWidth="2dp">
-
-                    <ImageView
-                        android:id="@+id/generatedImageView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/generatedImageCard3"
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="@dimen/margin_small"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="@dimen/card_elevation_small"
-                    app:strokeColor="@color/primary"
-                    app:strokeWidth="2dp">
-
-                    <ImageView
-                        android:id="@+id/generatedImageView3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/generatedImageCard4"
-                    android:layout_width="0dp"
-                    android:layout_height="200dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="@dimen/margin_small"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="@dimen/card_elevation_small"
-                    app:strokeColor="@color/primary"
-                    app:strokeWidth="2dp">
-
-                    <ImageView
-                        android:id="@+id/generatedImageView4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop" />
