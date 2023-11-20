@@ -124,10 +124,40 @@
 
 
     <LinearLayout
+
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generateButton">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/weatherLoading"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/weather_loading" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/aiLoading"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/ai_loading" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,36 +167,37 @@
             android:id="@+id/location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Location: New Delhi"
+            android:text="Location :..."
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Country: New Delhi"
+            android:text="Country :..."
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/temp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Temp: 29'"
+            android:text="Temp :..."
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/conditions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Condition: Mist"
+            android:text="Condition :..."
             android:textSize="22sp" />
 
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">

@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "OpenAI-Dall-E-2"
+rootProject.name = "Clear Sky App"
 include ':app'
