@@ -10,4 +10,6 @@
     <string name="close">Close</string>
     <string name="download">Download</string>
     <string name="enter_prompt">Prompt Cant\'t Be Empty</string>
+    <string name="enter_you_city_name">Enter you City Name</string>
+    <string name="send_to_ai">Send To Ai</string>
 </resources>
