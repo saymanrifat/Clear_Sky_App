@@ -15,6 +15,7 @@
         android:text="@string/enter_you_city_name"
         android:textColor="@color/primary"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -122,23 +123,63 @@
         app:layout_constraintTop_toBottomOf="@+id/chooseImageSize" />
 
 
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generateButton">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/location"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location: New Delhi"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Country: New Delhi"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Temp: 29'"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/conditions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Condition: Mist"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/shimmerLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:visibility="gone"
                 tools:visibility="visible">
@@ -146,6 +187,7 @@
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <View
                         android:layout_width="200dp"
                         android:layout_height="200dp"
@@ -182,8 +224,8 @@
                         android:id="@+id/generatedImageView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:contentDescription="@string/app_name" />
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop" />
                 </com.google.android.material.card.MaterialCardView>
             </GridLayout>
 
