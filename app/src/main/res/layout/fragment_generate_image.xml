@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Enter you City Name"
+        android:text="@string/enter_you_city_name"
         android:textColor="@color/primary"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/promptEditText"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="80dp"
             android:gravity="top"
             android:inputType="textMultiLine"
             android:overScrollMode="always"
@@ -112,7 +112,7 @@
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:background="@drawable/rounded_bg3"
-        android:text="Send To Ai"
+        android:text="@string/send_to_ai"
         android:textAllCaps="false"
         android:textColor="@color/primary"
         android:textSize="15sp"
@@ -182,7 +182,8 @@
                         android:id="@+id/generatedImageView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/app_name" />
                 </com.google.android.material.card.MaterialCardView>
             </GridLayout>
 

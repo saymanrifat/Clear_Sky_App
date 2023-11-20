@@ -10,7 +10,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.muratozturk.click_shrink_effect.applyClickShrink
 import com.muratozturk.openai_dall_e_2.R
-import com.muratozturk.openai_dall_e_2.common.*
+import com.muratozturk.openai_dall_e_2.common.Resource
+import com.muratozturk.openai_dall_e_2.common.Sizes
+import com.muratozturk.openai_dall_e_2.common.glideImage
+import com.muratozturk.openai_dall_e_2.common.gone
+import com.muratozturk.openai_dall_e_2.common.visible
 import com.muratozturk.openai_dall_e_2.databinding.FragmentGenerateImageBinding
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
