@@ -12,10 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/enter_you_city_name"
+        android:text="@string/enter_description"
         android:textColor="@color/primary"
         android:textStyle="bold"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +41,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/promptEditText"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="150dp"
             android:gravity="top"
             android:inputType="textMultiLine"
             android:overScrollMode="always"
@@ -113,7 +112,7 @@
         android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:background="@drawable/rounded_bg3"
-        android:text="@string/send_to_ai"
+        android:text="@string/generate"
         android:textAllCaps="false"
         android:textColor="@color/primary"
         android:textSize="15sp"
@@ -123,41 +122,12 @@
         app:layout_constraintTop_toBottomOf="@+id/chooseImageSize" />
 
 
-    <LinearLayout
-
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generateButton">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/weatherLoading"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:visibility="gone"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/weather_loading" />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/aiLoading"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:visibility="gone"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/ai_loading" />
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -167,69 +137,96 @@
             android:id="@+id/location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Location :..."
+            android:text=""
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Country :..."
+            android:text=""
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/temp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Temp :..."
+            android:text=""
             android:textSize="22sp" />
 
         <TextView
             android:id="@+id/conditions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Condition :..."
             android:textSize="22sp" />
 
     </LinearLayout>
 
+
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/shimmerLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:visibility="gone"
                 tools:visibility="visible">
 
                 <GridLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:columnCount="2">
+
 
                     <View
-                        android:layout_width="200dp"
+                        android:layout_width="0dp"
                         android:layout_height="200dp"
+                        android:layout_columnWeight="1"
                         android:layout_margin="@dimen/margin_small"
                         android:background="@drawable/radius_corner" />
 
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/margin_small"
+                        android:background="@drawable/radius_corner"
+                        android:visibility="invisible" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+
+                        android:layout_columnWeight="1"
+                        android:layout_margin="@dimen/margin_small"
+                        android:background="@drawable/radius_corner"
+                        android:visibility="invisible" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_columnWeight="1"
+                        android:visibility="invisible"
+                        android:layout_margin="@dimen/margin_small"
+                        android:background="@drawable/radius_corner" />
 
                 </GridLayout>
             </com.facebook.shimmer.ShimmerFrameLayout>
 
             <GridLayout
+
                 android:id="@+id/generatedImagesGrid"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -255,7 +252,74 @@
                         android:id="@+id/generatedImageView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/generatedImageCard2"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="@dimen/margin_small"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    android:visibility="invisible"
+                    app:cardElevation="@dimen/card_elevation_small"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="2dp">
+
+                    <ImageView
+                        android:id="@+id/generatedImageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/generatedImageCard3"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="@dimen/margin_small"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="@dimen/card_elevation_small"
+                    app:strokeColor="@color/primary"
+                    android:visibility="invisible"
+                    app:strokeWidth="2dp">
+
+                    <ImageView
+                        android:id="@+id/generatedImageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/generatedImageCard4"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="@dimen/margin_small"
+                    android:clickable="true"
+                    android:focusable="true"
+
+                    android:visibility="invisible"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="@dimen/card_elevation_small"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="2dp">
+
+                    <ImageView
+                        android:id="@+id/generatedImageView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:scaleType="centerCrop" />
                 </com.google.android.material.card.MaterialCardView>
             </GridLayout>

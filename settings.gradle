@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "Clear Sky App"
+rootProject.name = "Clear My Sky"
 include ':app'

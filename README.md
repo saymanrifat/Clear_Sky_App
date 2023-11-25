@@ -1,1 +1,1 @@
-#Clear Sky App
+#Clear Sky
