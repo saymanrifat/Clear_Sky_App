@@ -4,10 +4,12 @@ package com.muratozturk.openai_dall_e_2.presentation.generate_image
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.airbnb.lottie.LottieAnimationView
 import com.muratozturk.click_shrink_effect.applyClickShrink
 import com.muratozturk.openai_dall_e_2.R
 import com.muratozturk.openai_dall_e_2.common.Resource
@@ -31,6 +33,7 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
 
 
     private val viewModelWeather by viewModels<MainViewModel>()
+    private lateinit var animationView :LottieAnimationView
     private var edTextStr: String = ""
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,6 +60,8 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
                     binding.conditions.text = conditionStr
                     val promptStr =
                         "Create Image in $locationStr on weather of $conditionStr"
+
+                    binding.animationView.isVisible = false
                     sendToAi(promptStr)
                 }
 
@@ -91,6 +96,7 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
             with(binding) {
                 generateButton.setOnClickListener {
                     getTextFromEdittext()
+                    binding.animationView.isVisible = true
                 }
                 generatedImageCard.applyClickShrink()
 
