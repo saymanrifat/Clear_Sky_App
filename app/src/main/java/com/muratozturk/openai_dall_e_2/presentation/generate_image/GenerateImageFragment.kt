@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.airbnb.lottie.LottieAnimationView
 import com.muratozturk.click_shrink_effect.applyClickShrink
 import com.muratozturk.openai_dall_e_2.R
 import com.muratozturk.openai_dall_e_2.common.Resource
@@ -30,10 +29,7 @@ class GenerateImageFragment : Fragment(R.layout.fragment_generate_image) {
 
     private val viewModel: GenerateImageViewModel by viewModels()
     private val binding by viewBinding(FragmentGenerateImageBinding::bind)
-
-
     private val viewModelWeather by viewModels<MainViewModel>()
-    private lateinit var animationView :LottieAnimationView
     private var edTextStr: String = ""
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
